@@ -6,17 +6,13 @@ Feature: Adding a wine
 
   @Scenario1
   Scenario Outline:
-    Given Add Wine
-    When I fill in "name" with "<name>"
-    And I fill in "grapes" with "<grapes>"
-    And I fill in "country" with "<country>"
-    And I fill in "region" with "<region>"
-    And I fill in "year" with "<year>"
-    And I click on Save button
+    Given I go to add wine site
+    When I fill in details with "<name>","<grapes>","<country>","<region>","<year>","<description>"
+    When I click on Save button
     Then CRUD page should be displayed
    Examples:
-      | name | grapes | country | region | year |
-      | McDowell | 20 |  Australia  | NSW  | 2018 |
-      | McDowell-1 | 21 |  Singapore | East  | 2018 |
-      | McDowell-2 | 22 |  India  | Hyderabad  | 2018 |
-      | McDowell-3 | 23 |  New Zealand  | Auckland  | 2018 |
+      | name | grapes | country | region | year | description |
+      | McDowell | 20 |  Australia  | NSW  | 2018 | description-1 |
+      | McDowell-1 | 21 |  Singapore | East  | 2018 | description-2 |
+      | McDowell-2 | 22 |  India  | Hyderabad  | 2018 | description-3 |
+      | McDowell-3 | 23 |  New Zealand  | Auckland  | 2018 | description-4 |
